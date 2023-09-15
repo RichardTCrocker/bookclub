@@ -25,4 +25,12 @@ public class BookService {
         Optional<Book> book = bookRepository.findById(id);
         return book.orElse(null);
     }
+
+    public void update(Book book) {
+        bookRepository.save(book);
+    }
+
+    public void deleteBookById(Long id) {
+        bookRepository.deleteById(id);
+    }
 }

@@ -38,6 +38,17 @@
 
             <a href="/books">back to the shelves</a>
 
+            <c:if test="${userId == book.user.id}">
+                <a href="/books/${book.id}/edit" class="btn">Edit</a>
+            </c:if>
+
+            <c:if test="${userId == book.user.id}">
+                <form action="/books/${book.id}" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="submit" value="Delete">
+                </form>
+            </c:if>
+
 
 </body>
 </html>
